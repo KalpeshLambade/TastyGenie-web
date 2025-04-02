@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-food-form',
+  selector: 'app-food-form-page',
   templateUrl: './food-form.page.html',
   styleUrls: ['./food-form.page.scss'],
   standalone: false

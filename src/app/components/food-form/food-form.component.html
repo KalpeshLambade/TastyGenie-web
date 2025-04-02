@@ -1,0 +1,67 @@
+<div class="bg-gradient-to-b from-yellow-50 via-orange-100 to-green-50 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+    <h1 class="text-3xl font-bold text-center text-orange-900 mb-2">Find a Recipe</h1>
+    <p class="text-center text-green-900 mb-6">Enter your ingredients and preferences to generate a recipe.</p>
+    <form>
+      <div class="mb-4">
+        <label for="ingredients" class="block text-green-900 font-semibold mb-1">Ingredients <span class="text-red-500">*</span></label>
+        <div class="relative">
+          <input 
+            type="text" 
+            placeholder="e.g. chicken, broccoli, rice"
+            class="w-full p-3 border rounded-lg text-gray-800 placeholder-gray-600 bg-white focus:outline-none focus:ring-2 focus:ring-green-700 pr-10">
+          <ion-icon 
+            name="mic-outline" 
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xl">
+          </ion-icon>
+        </div>
+      </div>
+      
+      <div class="mb-4">
+        <label for="appliances" class="block text-green-900 font-semibold mb-1">Appliances</label>
+        <div class="relative">
+          <input 
+            type="text" 
+            placeholder="e.g. oven, blender, microwave"
+            class="w-full p-3 border rounded-lg text-gray-800 placeholder-gray-600 bg-white focus:outline-none focus:ring-2 focus:ring-green-700 pr-10">
+          <ion-icon 
+            name="mic-outline" 
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xl">
+          </ion-icon>
+        </div>
+      </div>
+      
+      <div class="mb-4 relative">
+        <label for="dietary-preferences" class="block text-green-900 font-semibold mb-1">Dietary Preferences</label>
+        <div class="relative">
+          <input 
+            type="text" 
+            placeholder="e.g. vegetarian, gluten-free, keto"
+            class="w-full p-3 border rounded-lg text-gray-800 placeholder-gray-600 bg-white focus:outline-none focus:ring-2 focus:ring-green-700 pr-10">
+          <ion-icon 
+            name="mic-outline" 
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xl">
+          </ion-icon>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <label for="cuisine" class="block text-green-900 font-semibold mb-1">Cuisine</label>
+        <div class="relative">
+          <input 
+            type="text" 
+            placeholder="e.g. Italian, Chinese,Indian, French "
+            class="w-full p-3 border rounded-lg text-gray-800 placeholder-gray-600 bg-white focus:outline-none focus:ring-2 focus:ring-green-700 pr-10"> <!-- Add pr-10 for padding on the right -->
+          <ion-icon 
+            name="mic-outline" 
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xl">
+          </ion-icon>
+        </div>
+      </div>
+
+      <button type="submit"
+        class="w-full bg-orange-600 hover:bg-orange-500 text-white p-3 rounded-lg font-semibold">Search</button>
+
+    </form>
+  </div>
+</div>
