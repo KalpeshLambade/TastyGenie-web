@@ -1,0 +1,32 @@
+<div class="bg-gradient-to-b from-yellow-50 via-orange-100 to-green-50 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+      <h1 class="text-3xl font-bold text-center text-orange-900 mb-2">Find a Recipe</h1>
+      <p class="text-center text-green-900 mb-6">Enter your ingredients and preferences to generate a recipe.</p>
+      <form>
+          <div class="mb-4">
+              <label for="ingredients" class="block text-green-900 font-semibold mb-1">Ingredients <span class="text-red-500">*</span></label>
+              <input type="text" id="ingredients" placeholder="e.g. chicken, broccoli, rice" class="w-full p-3 border rounded-lg text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-green-700">
+          </div>
+          <div class="mb-4">
+              <label for="appliances" class="block text-green-900 font-semibold mb-1">Appliances</label>
+              <select id="appliances" class="w-full p-3 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-700">
+                  <option>Select appliances</option>
+              </select>
+          </div>
+          <div class="mb-4 relative">
+              <label for="dietary-preferences" class="block text-green-900 font-semibold mb-1">Dietary Preferences</label>
+              <select id="dietary-preferences" class="w-full p-3 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-700">
+                  <option>Select dietary preferences</option>
+              </select>
+              <i class="fas fa-question-circle absolute right-3 top-3 text-gray-500"></i>
+          </div>
+          <div class="mb-6">
+              <label for="cuisine" class="block text-green-900 font-semibold mb-1">Cuisine</label>
+              <select id="cuisine" class="w-full p-3 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-700">
+                  <option>Select cuisine</option>
+              </select>
+          </div>
+          <button type="submit" class="w-full bg-orange-600 hover:bg-orange-500 text-white p-3 rounded-lg font-semibold">Search</button>
+      </form>
+  </div>
+</div>
