@@ -34,4 +34,40 @@ export class FoodFormComponent  implements OnInit {
     }
   }
 
+  appliancesText(transcript:string){
+    if(transcript?.length){
+      const currentValue = this.foodForm.get('appliances')?.value || '';
+      this.foodForm.get('appliances')?.setValue(
+        currentValue + (currentValue ? ' ' : '') + transcript
+      );
+    }
+  }
+
+  preferencesText(transcript:string){
+    if(transcript?.length){
+      const currentValue = this.foodForm.get('preferences')?.value || '';
+      this.foodForm.get('preferences')?.setValue(
+        currentValue + (currentValue ? ' ' : '') + transcript
+      );
+    }
+  }
+
+  cuisineText(transcript:string){
+    if(transcript?.length){
+      const currentValue = this.foodForm.get('cuisine')?.value || '';
+      this.foodForm.get('cuisine')?.setValue(
+        currentValue + (currentValue ? ' ' : '') + transcript
+      );
+    }
+  }
+
+  ingredientText(transcript:string){
+    if(transcript?.length){
+      const currentValue = this.foodForm.get('ingredients')?.value || '';
+      this.foodForm.get('ingredients')?.setValue(
+        currentValue + (currentValue ? ' ' : '') + transcript
+      );
+    }
+  }
+
 }
