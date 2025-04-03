@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  serverUrl:'https://tastygenie-server.onrender.com'
 };
