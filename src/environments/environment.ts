@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // serverUrl:'http://localhost:5200/api',
-  serverUrl:'https://tastygenie-server-1.onrender.com'
+  serverUrl:'https://tastygenie-server-1.onrender.com/api'
 
 };
 
