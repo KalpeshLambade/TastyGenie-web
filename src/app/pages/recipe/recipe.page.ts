@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RecipeDetail } from 'src/app/models/foodList';
+import { FoodService } from 'src/app/services/food.service';
 
 @Component({
   selector: 'app-recipe',
@@ -8,16 +10,28 @@ import { Router } from '@angular/router';
   standalone:false
 })
 export class RecipePage implements OnInit {
-  recipe:any;
+  recipeInfo:any;
+  isLoader:boolean= true
+
+  recipe!:RecipeDetail
 
   constructor(
-    private router:Router
+    private router:Router,
+    private foodService:FoodService
   ) { }
 
   ngOnInit() {
     const navigation = this.router.getCurrentNavigation();
-    this.recipe = navigation?.extras?.state?.['recipe'] || null;
-    console.log('Received Recipe:', this.recipe);
+    this.recipeInfo = navigation?.extras?.state?.['recipe'] || null;
+    this.getRecipeDetails();
+  }
+
+  async getRecipeDetails(){
+    let recipeResponse = await this.foodService.getRecipeDetails(this.recipeInfo);
+    if(recipeResponse !== null){
+      this.recipe = recipeResponse
+    }
+    this.isLoader = false;
   }
 
 }

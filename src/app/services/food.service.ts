@@ -23,4 +23,20 @@ export class FoodService {
     }
     return null
   }
+
+  async getRecipeDetails(params: {
+    ingredients: string;
+    cuisine: string;
+    appliances: string;
+    preferences: string;
+    recipeName: string;
+    imgUrl: string;
+  }){
+    let response = await this.expressService.getRecipeDetails(params);
+
+    if(response?.status == 'success'){
+      return response?.recipeObj
+    }
+    return null
+  }
 }

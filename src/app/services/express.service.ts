@@ -13,7 +13,7 @@ export class ExpressService {
     cuisine: string;
     appliances: string;
     preferences: string;
-  }):Promise<any> {
+  }): Promise<any> {
     return new Promise((resolve, reject) => {
       let url = environment.serverUrl + '/v1/suggestFoodItems';
       this.http
@@ -21,7 +21,37 @@ export class ExpressService {
           ingredients: params?.ingredients,
           cuisine: params?.cuisine,
           appliances: params?.appliances,
-          preferences: params?.appliances,
+          preferences: params?.preferences,
+        })
+        .subscribe({
+          next: (res: any) => {
+            resolve(res);
+          },
+          error: (err) => {
+            resolve(null);
+          },
+        });
+    });
+  }
+
+  getRecipeDetails(params: {
+    ingredients: string;
+    appliances: string;
+    preferences: string;
+    cuisine: string;
+    recipeName: string;
+    imgUrl: string;
+  }): Promise<any> {
+    return new Promise((resolve, reject) => {
+      let url = environment.serverUrl + '/v1/getRecipeDetails';
+      this.http
+        .post(url, {
+          ingredients: params?.ingredients,
+          cuisine: params?.cuisine,
+          appliances: params?.appliances,
+          preferences: params?.preferences,
+          recipeName: params?.recipeName,
+          imgUrl: params?.imgUrl,
         })
         .subscribe({
           next: (res: any) => {
