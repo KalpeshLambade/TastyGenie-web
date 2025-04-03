@@ -47,11 +47,12 @@ export class FoodFormPage implements OnInit {
     this.isList = false;
   }
 
-  async getRecipe(event: { name: string; imgUrl: string }) {
+  async getRecipe(event: { name: string; imgUrl: string,cuisine:string }) {
     let selectedRecipe = {
       ...this.previousFormData,
       recipeName : event?.name,
-      imgUrl : event?.imgUrl
+      imgUrl : event?.imgUrl,
+      cuisine: event?.cuisine
     }
 
     this.router.navigate(['/recipe'],{state : {recipe : selectedRecipe}})

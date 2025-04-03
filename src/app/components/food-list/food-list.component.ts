@@ -12,16 +12,18 @@ export class FoodListComponent implements OnInit {
   @Output() selectedRecipe = new EventEmitter<{
     name: string;
     imgUrl: string;
+    cuisine:string
   }>();
 
   constructor() {}
 
   ngOnInit() {}
 
-  onRecipeSelect(name: string, imgUrl: string) {
+  onRecipeSelect(name: string, imgUrl: string,cuisine:string) {
     this.selectedRecipe.emit({
       name,
-      imgUrl
+      imgUrl,
+      cuisine
     })
   }
 }

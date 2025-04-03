@@ -10,7 +10,7 @@
       @for (recipe of foodFormList | keyvalue; track recipe.key) {
         <ion-card 
           class="shadow-lg rounded-lg overflow-hidden bg-white cursor-pointer transition duration-300 ease-in-out hover:shadow-xl hover:scale-105"
-          (click)="onRecipeSelect(recipe.key,recipe.value.imageUrl)"
+          (click)="onRecipeSelect(recipe.key,recipe.value.imageUrl,recipe.value.cuisine)"
         >
           <img [alt]="recipe.key" [src]="recipe.value.imageUrl" class="w-full h-40 object-cover">
           
