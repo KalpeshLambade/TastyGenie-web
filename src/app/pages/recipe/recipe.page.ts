@@ -29,9 +29,12 @@ export class RecipePage implements OnInit {
   async getRecipeDetails(){
     let recipeResponse = await this.foodService.getRecipeDetails(this.recipeInfo);
     if(recipeResponse !== null){
-      this.recipe = recipeResponse
+      this.recipe = recipeResponse;
+      this.isLoader = false;
+    }else{
+      this.isLoader = false;
+      this.router.navigate(['/error']);
     }
-    this.isLoader = false;
   }
 
 }

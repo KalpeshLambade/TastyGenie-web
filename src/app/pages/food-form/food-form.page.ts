@@ -29,10 +29,16 @@ export class FoodFormPage implements OnInit {
     if (listResponse) {
       this.recipeList = listResponse;
       this.previousFormData = event
+      this.isLoader = false;
+      this.isForm = false;
+      this.isList = true;
+    }else{
+      this.isLoader = false;
+      this.isForm = true;
+      this.isList = false;
+      this.router.navigate(['/error']);
     }
-    this.isLoader = false;
-    this.isForm = false;
-    this.isList = true;
+    
   }
 
   setFormLoader(event: any) {
