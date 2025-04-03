@@ -10,6 +10,7 @@ import { FoodFormPage } from './food-form.page';
 import { FoodFormComponent } from 'src/app/components/food-form/food-form.component';
 import { SpeechToTextComponent } from 'src/app/components/speech-to-text/speech-to-text.component';
 import { FoodListComponent } from 'src/app/components/food-list/food-list.component';
+import { PancakeLoaderComponent } from 'src/app/components/pancake-loader/pancake-loader.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { FoodListComponent } from 'src/app/components/food-list/food-list.compon
     FoodFormPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [FoodFormPage,FoodFormComponent,SpeechToTextComponent,FoodListComponent]
+  declarations: [FoodFormPage,FoodFormComponent,SpeechToTextComponent,FoodListComponent,PancakeLoaderComponent]
 })
 export class FoodFormPageModule {}
