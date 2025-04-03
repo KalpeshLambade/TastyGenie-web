@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IonInput, IonIcon } from "@ionic/angular/standalone";
+import { formData} from 'src/app/models/foodList';
+import { FoodService } from 'src/app/services/food.service';
 
 @Component({
   selector: 'app-food-form',
@@ -9,10 +10,12 @@ import { IonInput, IonIcon } from "@ionic/angular/standalone";
   standalone: false
 })
 export class FoodFormComponent  implements OnInit {
+  @Output() foodFormData = new EventEmitter<formData>();
+  @Output() isFormLoader = new EventEmitter<boolean>();   
   foodForm!:FormGroup;
 
   constructor(
-    private fb:FormBuilder
+    private fb:FormBuilder,
   ) { }
 
   ngOnInit() {
@@ -28,9 +31,16 @@ export class FoodFormComponent  implements OnInit {
     })
   }
 
-  submitForm(){
+  async submitForm(){
     if(this.foodForm.valid){
-      console.log(this.foodForm.value)
+      this.isFormLoader.emit(true);
+      let foodFormData = {
+        ingredients : this.foodForm.get('ingredients')?.value,
+        appliances : this.foodForm.get('appliances')?.value,
+        preferences : this.foodForm.get('preferences')?.value,
+        cuisine : this.foodForm.get('cuisine')?.value
+      }
+      this.foodFormData.emit(foodFormData);
     }
   }
 

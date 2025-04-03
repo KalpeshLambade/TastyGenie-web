@@ -10,18 +10,31 @@
   
     <!-- Recipe Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-      @for (recipe of recipes; track $index) {
-        <ion-card class="shadow-lg rounded-lg overflow-hidden bg-white cursor-pointer transition duration-300 ease-in-out hover:shadow-xl hover:scale-105">
-          <img [alt]="recipe.name" [src]="recipe.image" class="w-full h-40 object-cover">
+      @for (recipe of foodFormList | keyvalue; track recipe.key) {
+        <ion-card 
+          class="shadow-lg rounded-lg overflow-hidden bg-white cursor-pointer transition duration-300 ease-in-out hover:shadow-xl hover:scale-105"
+        >
+          <img [alt]="recipe.key" [src]="recipe.value.imageUrl" class="w-full h-40 object-cover">
+          
           <ion-card-header class="p-4">
-            <ion-card-title class="text-lg font-semibold text-orange-800">{{ recipe.name }}</ion-card-title>
-            <ion-card-subtitle class="text-sm text-green-700">{{ recipe.cuisine }}</ion-card-subtitle>
+            <ion-card-title class="text-lg font-semibold text-orange-800">
+              {{ recipe.key }}
+            </ion-card-title>
           </ion-card-header>
-          <ion-card-content class="p-4 text-gray-700 font-medium">
-            {{ recipe.time }} min
+          
+          <ion-card-content class="p-4 text-gray-700 font-medium flex flex-col gap-2">
+            <div class="flex justify-between items-center">
+              <span class="bg-orange-100 text-orange-800 font-semibold px-2 py-1 rounded-md">
+                {{ recipe.value.cuisine }}
+              </span>
+              <span class="bg-green-100 text-green-800 font-semibold px-2 py-1 rounded-md">
+                ⏳ {{ recipe.value.estimateTime }} min
+              </span>
+            </div>
           </ion-card-content>
         </ion-card>
       }
     </div>
+    
   </div>
 </div>

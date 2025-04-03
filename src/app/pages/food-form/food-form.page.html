@@ -1,3 +1,14 @@
-<!-- <app-food-form></app-food-form> -->
-<!-- <app-food-list></app-food-list> -->
-<app-pancake-loader></app-pancake-loader>
+@if(isForm){
+    <app-food-form 
+        (foodFormData)="getFoodList($event)" 
+        (isFormLoader)="setFormLoader($event)">
+    </app-food-form>  
+}
+
+@if(isList){
+    <app-food-list [foodFormList]="recipeList" ></app-food-list>
+}
+
+@if(isLoader){
+    <app-pancake-loader></app-pancake-loader>
+}
