@@ -7,15 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { RecipePageRoutingModule } from './recipe-routing.module';
 
 import { RecipePage } from './recipe.page';
-import { PancakeLoaderComponent } from 'src/app/components/pancake-loader/pancake-loader.component';
+
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RecipePageRoutingModule
+    RecipePageRoutingModule,
+    SharedModule
   ],
-  declarations: [RecipePage,PancakeLoaderComponent]
+  declarations: [RecipePage]
 })
 export class RecipePageModule {}
