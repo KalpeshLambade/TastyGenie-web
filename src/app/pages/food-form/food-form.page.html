@@ -6,7 +6,10 @@
 }
 
 @if(isList){
-    <app-food-list [foodFormList]="recipeList" ></app-food-list>
+    <app-food-list 
+    [foodFormList]="recipeList" 
+    (selectedRecipe)="getRecipe($event)"
+    ></app-food-list>
 }
 
 @if(isLoader){

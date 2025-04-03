@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   standalone:false
 })
 export class RecipePage implements OnInit {
+  recipe:any;
 
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit() {
+    const navigation = this.router.getCurrentNavigation();
+    this.recipe = navigation?.extras?.state?.['recipe'] || null;
+    console.log('Received Recipe:', this.recipe);
   }
 
 }
